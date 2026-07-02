@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from typing import Any
 
 import requests
@@ -8,6 +9,8 @@ import requests
 BASE_URL = "https://api-comexstat.mdic.gov.br"
 DEFAULT_TIMEOUT = 120
 DEFAULT_PARAMS = {"language": "pt"}
+MAX_RETRIES_429 = 5
+DEFAULT_RETRY_WAIT_SECONDS = 12
 
 
 class ComexStatApiError(RuntimeError):
@@ -41,21 +44,33 @@ def _request_json(
     url = _build_url(path)
     request_params = {**DEFAULT_PARAMS, **(params or {})}
 
-    try:
-        response = requests.request(
-            method=method,
-            url=url,
-            params=request_params,
-            json=json,
-            timeout=DEFAULT_TIMEOUT,
-        )
-    except requests.RequestException as exc:
-        raise ComexStatApiError(
-            f"Falha ao acessar a API ComexStat em {url}: {exc}"
-        ) from exc
+    for attempt in range(1, MAX_RETRIES_429 + 1):
+        try:
+            response = requests.request(
+                method=method,
+                url=url,
+                params=request_params,
+                json=json,
+                timeout=DEFAULT_TIMEOUT,
+            )
+        except requests.RequestException as exc:
+            raise ComexStatApiError(
+                f"Falha ao acessar a API ComexStat em {url}: {exc}"
+            ) from exc
 
-    if not response.ok:
-        raise ComexStatApiError(_format_http_error(response))
+        if response.status_code == 429 and attempt < MAX_RETRIES_429:
+            wait_seconds = _get_retry_wait_seconds(response)
+            print(
+                "Limite de requisicoes atingido. "
+                f"Aguardando {wait_seconds} segundos antes de tentar novamente..."
+            )
+            time.sleep(wait_seconds)
+            continue
+
+        if not response.ok:
+            raise ComexStatApiError(_format_http_error(response))
+
+        break
 
     try:
         return response.json()
@@ -78,6 +93,17 @@ def _format_http_error(response: requests.Response) -> str:
         f"Erro HTTP {response.status_code} ao acessar {url}."
         f" Detalhes retornados pela API: {details}"
     )
+
+
+def _get_retry_wait_seconds(response: requests.Response) -> int:
+    retry_after = response.headers.get("Retry-After")
+    if retry_after is None:
+        return DEFAULT_RETRY_WAIT_SECONDS
+
+    try:
+        return max(int(retry_after), 1)
+    except ValueError:
+        return DEFAULT_RETRY_WAIT_SECONDS
 
 
 def _extract_error_details(response: requests.Response) -> str:
