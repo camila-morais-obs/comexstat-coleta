@@ -1,0 +1,99 @@
+{
+  "data": {
+    "list": [
+      {
+        "filter": "country",
+        "text": "Países"
+      },
+      {
+        "filter": "economicBlock",
+        "text": "Blocos"
+      },
+      {
+        "filter": "state",
+        "text": "UF do produto"
+      },
+      {
+        "filter": "via",
+        "text": "Via"
+      },
+      {
+        "filter": "urf",
+        "text": "URF"
+      },
+      {
+        "filter": "ncm",
+        "text": "NCM - Nomenclatura Comum do Mercosul"
+      },
+      {
+        "filter": "subHeading",
+        "text": "Subposição (SH6)"
+      },
+      {
+        "filter": "heading",
+        "text": "Posição (SH4)"
+      },
+      {
+        "filter": "chapter",
+        "text": "Capítulo (SH2)"
+      },
+      {
+        "filter": "section",
+        "text": "Seção"
+      },
+      {
+        "filter": "BECLevel3",
+        "text": "CGCE Nível 3"
+      },
+      {
+        "filter": "BECLevel2",
+        "text": "CGCE Nível 2"
+      },
+      {
+        "filter": "BECLevel1",
+        "text": "CGCE Nível 1"
+      },
+      {
+        "filter": "SITCBasicHeading",
+        "text": "CUCI Item"
+      },
+      {
+        "filter": "SITCSubGroup",
+        "text": "CUCI Subposição"
+      },
+      {
+        "filter": "SITCGroup",
+        "text": "CUCI Posição"
+      },
+      {
+        "filter": "SITCDivision",
+        "text": "CUCI Capítulo"
+      },
+      {
+        "filter": "SITCSection",
+        "text": "CUCI Seção"
+      },
+      {
+        "filter": "ISICClass",
+        "text": "ISIC Classe"
+      },
+      {
+        "filter": "ISICGroup",
+        "text": "ISIC Grupo"
+      },
+      {
+        "filter": "ISICDivision",
+        "text": "ISIC Divisão"
+      },
+      {
+        "filter": "ISICSection",
+        "text": "ISIC Seção"
+      }
+    ],
+    "0": "pt"
+  },
+  "success": true,
+  "message": null,
+  "processo_info": null,
+  "language": "pt"
+}

@@ -1,0 +1,48 @@
+{
+  "data": {
+    "list": [
+      {
+        "id": "metricFOB",
+        "text": "Valor US$ FOB",
+        "depends": null
+      },
+      {
+        "id": "metricKG",
+        "text": "Quilograma Liquido",
+        "depends": null
+      },
+      {
+        "id": "metricStatistic",
+        "text": "Quantidade Estatística",
+        "depends": {
+          "filter": "ncm"
+        }
+      },
+      {
+        "id": "metricFreight",
+        "text": "US$ Frete",
+        "depends": {
+          "flow": "import"
+        }
+      },
+      {
+        "id": "metricInsurance",
+        "text": "US$ Seguro",
+        "depends": {
+          "flow": "import"
+        }
+      },
+      {
+        "id": "metricCIF",
+        "text": "Valor US$ CIF",
+        "depends": {
+          "flow": "import"
+        }
+      }
+    ]
+  },
+  "success": true,
+  "message": null,
+  "processo_info": null,
+  "language": "pt"
+}
