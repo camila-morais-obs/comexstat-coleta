@@ -1,0 +1,146 @@
+{
+  "data": [
+    [
+      {
+        "text": "Acre",
+        "id": "12"
+      },
+      {
+        "text": "Alagoas",
+        "id": "27"
+      },
+      {
+        "text": "Amapá",
+        "id": "16"
+      },
+      {
+        "text": "Amazonas",
+        "id": "13"
+      },
+      {
+        "text": "Bahia",
+        "id": "32"
+      },
+      {
+        "text": "Ceará",
+        "id": "23"
+      },
+      {
+        "text": "Consumo de Bordo",
+        "id": "94"
+      },
+      {
+        "text": "Distrito Federal",
+        "id": "54"
+      },
+      {
+        "text": "Espírito Santo",
+        "id": "34"
+      },
+      {
+        "text": "Estados Diversos - Café",
+        "id": "98"
+      },
+      {
+        "text": "Exterior",
+        "id": "93"
+      },
+      {
+        "text": "Goiás",
+        "id": "53"
+      },
+      {
+        "text": "Maranhão",
+        "id": "21"
+      },
+      {
+        "text": "Mato Grosso",
+        "id": "52"
+      },
+      {
+        "text": "Mato Grosso do Sul",
+        "id": "55"
+      },
+      {
+        "text": "Mercadoria Nacionalizada",
+        "id": "96"
+      },
+      {
+        "text": "Minas Gerais",
+        "id": "33"
+      },
+      {
+        "text": "Não Declarada",
+        "id": "95"
+      },
+      {
+        "text": "Paraná",
+        "id": "42"
+      },
+      {
+        "text": "Paraíba",
+        "id": "25"
+      },
+      {
+        "text": "Pará",
+        "id": "15"
+      },
+      {
+        "text": "Pernambuco",
+        "id": "26"
+      },
+      {
+        "text": "Piauí",
+        "id": "22"
+      },
+      {
+        "text": "Reexportação",
+        "id": "97"
+      },
+      {
+        "text": "Rio Grande do Norte",
+        "id": "24"
+      },
+      {
+        "text": "Rio Grande do Sul",
+        "id": "45"
+      },
+      {
+        "text": "Rio de Janeiro",
+        "id": "36"
+      },
+      {
+        "text": "Rondônia",
+        "id": "11"
+      },
+      {
+        "text": "Roraima",
+        "id": "14"
+      },
+      {
+        "text": "Santa Catarina",
+        "id": "44"
+      },
+      {
+        "text": "Sergipe",
+        "id": "31"
+      },
+      {
+        "text": "São Paulo",
+        "id": "41"
+      },
+      {
+        "text": "Tocantins",
+        "id": "17"
+      },
+      {
+        "text": "Zona Não Declarada",
+        "id": "99"
+      }
+    ]
+  ],
+  "success": true,
+  "message": null,
+  "processo_info": null,
+  "language": "pt"
+}

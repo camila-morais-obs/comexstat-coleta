@@ -11,7 +11,7 @@ DEFAULT_PARAMS = {"language": "pt"}
 
 
 class ComexStatApiError(RuntimeError):
-    """Erro de comunicação ou resposta inválida da API ComexStat."""
+    """Erro de comunicacao ou resposta invalida da API ComexStat."""
 
 
 def get_json(path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -24,6 +24,12 @@ def post_json(
     params: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return _request_json("POST", path, params=params, json=payload)
+
+
+def get_filter_values(base: str, filter_name: str) -> dict[str, Any]:
+    base_path = base.strip("/")
+    filter_path = filter_name.strip("/")
+    return get_json(f"/{base_path}/filters/{filter_path}")
 
 
 def _request_json(
@@ -55,7 +61,7 @@ def _request_json(
         return response.json()
     except ValueError as exc:
         raise ComexStatApiError(
-            f"A API ComexStat respondeu com conteúdo que não é JSON em {url}."
+            f"A API ComexStat respondeu com conteudo que nao e JSON em {url}."
         ) from exc
 
 

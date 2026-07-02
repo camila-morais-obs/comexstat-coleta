@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Dados e arquivos gerados
+/data/
+/outputs/
+/output/
+*.xlsx
+*.csv
+*.parquet
